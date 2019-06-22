@@ -1,0 +1,30 @@
+body {
+  height: 100%;
+  color: white;
+}
+
+header {
+  background-color: rgb(255, 200, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+main {
+  background-color: red;
+}
+
+footer {
+  background-color: blue;
+}
+
+article {
+  background-color: purple;
+}
+
+article img {
+  width: 300px;
+}
