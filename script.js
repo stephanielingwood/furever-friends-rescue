@@ -38,19 +38,30 @@ function createCatEntry(name, age, gender) {
 }
 
 
-var wantsToAdd = prompt('Do you want to add a cat today?');
+var wantsToAdd = prompt('Do you want to add a cat today? Type yes or no');
+
+// is wantsToAdd not equal to yes, and is it not equal to no
+while (wantsToAdd !== 'yes' && wantsToAdd !== 'no') {
+  wantsToAdd = prompt('Do you want to add a cat today? Type yes or no');
+}
+
 
 if (wantsToAdd === 'yes') {
-  // prompt the user for the name, age and gender
-  var userName = prompt('what is the name of the cat?');
-  var userAge = prompt('how old is the cat?');
-  var userGender = prompt('what gender is the cat?');
+  var numberOfCats = prompt('How many cats do you want to add?');
 
-  // hand that info to the function that builds the html and run the function
-  var html = createCatEntry(userName, userAge, userGender);
+  for (numberOfCats; numberOfCats > 0; numberOfCats--) {
+    // prompt the user for the name, age and gender
+    var userName = prompt('what is the name of the cat?');
+    var userAge = prompt('how old is the cat?');
+    var userGender = prompt('what gender is the cat?');
 
-  // take the html and give it to document.write
-  document.write(html);
+    // hand that info to the function that builds the html and run the function
+    var html = createCatEntry(userName, userAge, userGender);
+
+    // take the html and give it to document.write
+    document.write(html);
+  }
+
 } else {
   document.write('Thanks for volunteering!');
 }
