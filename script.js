@@ -9,6 +9,7 @@
 
 var username = prompt('What is your name?');
 
+
 // concatenate a string (aka adding blobs of text together)
 document.write('<p> Hi, ' + username + '. Welcome to our cat rescue.</p>');
 
@@ -48,19 +49,27 @@ while (wantsToAdd !== 'yes' && wantsToAdd !== 'no') {
 
 if (wantsToAdd === 'yes') {
   var numberOfCats = prompt('How many cats do you want to add?');
+  var catList = [];
 
   for (numberOfCats; numberOfCats > 0; numberOfCats--) {
     // prompt the user for the name, age and gender
-    var userName = prompt('what is the name of the cat?');
-    var userAge = prompt('how old is the cat?');
-    var userGender = prompt('what gender is the cat?');
+    var newCat = {};
+    newCat.name = prompt('what is the name of the cat?');
+    newCat.age = prompt('how old is the cat?');
+    newCat.gender = prompt('what gender is the cat?');
 
     // hand that info to the function that builds the html and run the function
-    var html = createCatEntry(userName, userAge, userGender);
+    newCat.html = createCatEntry(newCat.name, newCat.age, newCat.gender);
 
-    // take the html and give it to document.write
-    document.write(html);
+    catList.push(newCat);
+    document.write(newCat.html);
   }
+
+  // stretch goal - do the document.write from the loop
+  // for (var index = 0; index < catList.length; index++) {
+  //   // take the html and give it to document.write
+  //   document.write(catList[index].html);
+  // }
 
 } else {
   document.write('Thanks for volunteering!');
